@@ -1,0 +1,182 @@
+@import "variables";
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile {
+  // height: 100vh;
+  width: 100vw;
+}
+
+.container {
+  background: $secondary-color;
+  width: 60vw;
+  border-radius: 1%;
+  margin: 100px;
+  padding-bottom: 100px;
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+    0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+    0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+}
+
+.header {
+  height: 80px;
+  border-bottom: 6px solid #f8f8f7d3;
+  .heading {
+    justify-content: flex-end;
+    margin: 20px;
+  }
+  .refresh_icon {
+    font-size: 4rem;
+    color: $main-color;
+    cursor: pointer;
+  }
+}
+
+.details {
+  justify-content: space-between;
+  margin: 80px;
+  align-items: flex-start;
+}
+
+.basic_details {
+  width: 75%;
+  margin-left: 70px;
+  .name {
+    font-size: 2rem;
+    color: #405363e5;
+    margin-right: 20px;
+    font-family: "Merienda", cursive;
+  }
+  .location_icon {
+    font-size: 1.4rem;
+    color: #405363ab;
+  }
+  .location {
+    font-size: 1rem;
+    vertical-align: text-top;
+    font-family: "Merienda", cursive;
+    color: #405363ab;
+  }
+
+  .details_wrapper {
+    margin-top: 20px;
+    .property {
+      font-size: 1rem;
+      vertical-align: text-top;
+      font-family: "Merienda", cursive;
+      color: #405363ab;
+      padding-top: 16px;
+    }
+    .value {
+      font-size: 1.1rem;
+      color: #52aef6;
+      padding-top: 8px;
+      color: #2196f3;
+
+      margin-right: 20px;
+      font-family: "Merienda", cursive;
+      word-break: break-all;
+    }
+  }
+}
+
+.profile_image {
+  width: 290px;
+
+  img {
+    width: 100%;
+  }
+}
+
+.loader {
+  height: 50vh;
+}
+
+.lds-dual-ring {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #fff;
+  border-color: $main-color transparent $main-color transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  body {
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+  .flex {
+    flex-direction: column;
+  }
+
+  .profile_image {
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .name_wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    align-items: center;
+  }
+
+  .location_icon {
+    padding: 5px;
+    margin: 5px;
+  }
+  .name {
+    text-align: center;
+  }
+
+  .profile_image {
+    width: 150px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .details_wrapper {
+    margin: 0 auto;
+    .property {
+      width: 100%;
+    }
+    .value {
+      width: 100%;
+    }
+  }
+
+  .details {
+    margin: 30px auto;
+  }
+
+  .container {
+    width: 80%;
+  }
+
+  .basic_details {
+    margin: 0 auto;
+  }
+}
