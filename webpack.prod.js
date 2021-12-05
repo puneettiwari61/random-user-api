@@ -32,28 +32,6 @@ class MetaInfoPlugin {
 module.exports = merge(common, {
   mode: "production",
   devtool: false,
-  // output: {
-  //   path: paths.build,
-  //   publicPath: "/",
-  //   filename: "js/[name].[contenthash].bundle.js",
-  // },
-
-  // output: {
-  //   filename: "bundle.[hash].js",
-  //   path: __dirname + "/dist/bundle/",
-  //   publicPath: "/static/",
-  // },
-  // output: {
-  //   path: __dirname + "/dist/bundle/",
-  //   publicPath: "/static/",
-  //   filename: "[name].[contenthash].bundle.js",
-  //   // chunkFilename: "static/js/[name].chunk.js",
-  // },
-  // output: {
-  //   filename: "[name].[contenthash].bundle.js",
-  //   path: __dirname + "/dist/bundle/",
-  //   publicPath: "/static/",
-  // },
 
   output: {
     filename: "bundle.[hash].js",
@@ -66,18 +44,27 @@ module.exports = merge(common, {
     rules: [
       {
         test: /\.(sass|scss|css)$/,
+        // use: [
+        //   MiniCssExtractPlugin.loader,
+        //   {
+        //     loader: "css-loader",
+        //     options: {
+        //       importLoaders: 2,
+        //       sourceMap: false,
+        //       modules: false,
+        //     },
+        //   },
+        //   "postcss-loader",
+        //   "sass-loader",
+        // ],
         use: [
-          MiniCssExtractPlugin.loader,
+          "style-loader",
           {
             loader: "css-loader",
-            options: {
-              importLoaders: 2,
-              sourceMap: false,
-              modules: false,
-            },
+            options: { sourceMap: true, importLoaders: 1, modules: false },
           },
-          "postcss-loader",
-          "sass-loader",
+          { loader: "postcss-loader", options: { sourceMap: true } },
+          { loader: "sass-loader", options: { sourceMap: true } },
         ],
       },
     ],
