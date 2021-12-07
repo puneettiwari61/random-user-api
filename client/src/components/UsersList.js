@@ -56,7 +56,6 @@ const UserRow = (props) => {
         <td className="user_name" onClick={() => handleClick(props.user)}>
           {props.user.firstName + " " + props.user.lastName}
         </td>
-        <td>{props.user.phone}</td>
         <td>{props.user.email}</td>
         <td>
           <div className="action_icons">
@@ -76,7 +75,6 @@ const UserTable = (props) => {
         <tr>
           <th>Name</th>
           <th>Phone</th>
-          <th>Email</th>
           <th>Actions</th>
         </tr>
       </thead>

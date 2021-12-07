@@ -13,7 +13,7 @@
 
 .container {
   background: $secondary-color;
-  width: 60vw;
+  width: 40vw;
   border-radius: 1%;
   margin: 100px;
   padding-bottom: 100px;
@@ -73,9 +73,12 @@
     }
     .value {
       font-size: 1.1rem;
-      color: #52aef6;
+      // color: #52aef6;
+      color: black;
       padding-top: 8px;
-      color: #2196f3;
+      // color: #2196f3;
+      color: black;
+
 
       margin-right: 20px;
       font-family: "Merienda", cursive;
