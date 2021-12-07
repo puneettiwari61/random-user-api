@@ -30,11 +30,11 @@ module.exports = {
   },
   getUsersList: async (req, res) => {
     try {
-      const users = await User.find({})
-        .limit(10)
-        .sort({ createdAt: -1 })
-        // .select("createdAt password updatedAt")
-        .exec();
+      const users = await User.find({}).limit(10).sort({ createdAt: -1 }).lean();
+      const deleteKeys = ["createdAt", "password", "updatedAt"];
+      deleteKeys.forEach((key) => {
+        delete users[key];
+      });
       res.json({ success: true, users });
     } catch (err) {
       console.log(err);

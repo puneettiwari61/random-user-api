@@ -1,7 +1,16 @@
 import React, { useState, useEffect } from "react";
 
 const Modal = ({ onRequestClose, data, onSubmit, handleOnChange }) => {
-  const otherDetails = ["name", "latitude", "longitude"];
+  const otherDetails = [
+    "name",
+    "latitude",
+    "longitude",
+    "_id",
+    "__v",
+    "createdAt",
+    "password",
+    "updatedAt",
+  ];
 
   return (
     <div className="modal__backdrop">
