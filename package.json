@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www",
+    "start": "NODE_ENV=development nodemon ./bin/www",
     "webpack": "webpack serve --config ./webpack.dev.js --mode development",
     "build": "webpack --config ./webpack.prod.js --mode production"
   },
@@ -25,6 +25,7 @@
     "html-webpack-plugin": "^5.5.0",
     "http-errors": "~1.6.3",
     "mini-css-extract-plugin": "^2.4.5",
+    "mongoose": "^6.0.14",
     "morgan": "~1.9.1",
     "node-sass": "^6.0.1",
     "nodemon": "^2.0.15",

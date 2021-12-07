@@ -4,15 +4,10 @@ import Map from "./map/Map";
 import { useSelector } from "react-redux";
 import Loader from "./Loader";
 import Details from "./Details";
+import UsersList from "./UsersList";
 
 const Profile = ({ getNewUser }) => {
   const { user, loading } = useSelector((state) => state.userReducer);
-
-  const location = {
-    lat: user?.latitude,
-    lng: user?.longitude,
-    address: user?.address,
-  };
 
   return (
     <div className="profile flex">
@@ -27,7 +22,7 @@ const Profile = ({ getNewUser }) => {
         ) : (
           <>
             <Details user={user} />
-            <Map location={location} zoomLevel={1} />
+            <UsersList />
           </>
         )}
       </div>
